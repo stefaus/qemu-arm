@@ -1,0 +1,9 @@
+#!/bin/bash
+FIFO=../tempfifo
+if [[ ! -p $FIFO ]]; then
+    mkfifo $FIFO
+fi
+
+bash -c "sleep 2 && nc -l -p 444 <$FIFO | nc 127.0.0.1 44444 >$FIFO" &
+exec /home/mi/linnert/arm/bin/qemu-system-arm -M portux920t -m 64M -nographic "$@" -piotelnet
+rm $FIFO
