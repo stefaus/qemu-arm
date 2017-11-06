@@ -3,7 +3,7 @@ FROM debian:latest
 MAINTAINER Stefan Moll <stefan@stefaus.de>
 
 # install packages
-RUN apt-get update && apt-get install -y libjpeg62 libcurl3-gnutls libglib2.0-0 libnuma-dev libncurses5 libpixman-1-0 libmpc3 make netcat telnet
+RUN apt-get update && apt-get install -y libjpeg62 libcurl3-gnutls libglib2.0-0 libnuma-dev libncurses5 libpixman-1-0 libmpc3 make netcat telnet python-dev
 
 # Files
 COPY arm /home/mi/linnert/arm
