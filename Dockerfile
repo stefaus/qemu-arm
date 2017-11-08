@@ -15,7 +15,7 @@ COPY qemu-asprak /home/mi/linnert/arm/bin
 WORKDIR /home/mi/linnert/arm/workspace
 
 # include bin
-ENV PATH="/home/mi/linnert/arm/bin:${PATH}"
+ENV PATH="/home/mi/linnert/arm/bin:/home/mi/linnert/arm/arm-none-eabi/bin:${PATH}"
 
 EXPOSE 444
 
